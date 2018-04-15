@@ -50,7 +50,7 @@ public class pack_rle {
                 }
             }
         } catch (IOException e) {
-            System.out.println("Ошибка");
+            System.out.println("Exception");
         }
     }
 
@@ -80,7 +80,7 @@ public class pack_rle {
                 }
             }
         } catch (IOException e) {
-            System.out.println("Ошибка");
+            System.out.println("Exception");
         }
     }
 }
