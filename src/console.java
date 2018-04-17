@@ -5,10 +5,7 @@ import java.io.IOException;
 
 public class console {
 
-    @Argument(required = true, metaVar = "pack-rle")
-    private String name;
-
-    @Argument(required = true, metaVar = "InputName", index = 1)
+    @Argument(required = true, metaVar = "InputName")
     private String inputFileName;
 
     @Option(name = "-z", metaVar = "pack", forbids = "-u")
@@ -33,9 +30,6 @@ public class console {
             parser.printUsage(System.err);
             return;
         }
-        if (name == null || !name.contentEquals("pack-rle")) {
-            throw new IllegalArgumentException("pack-rle [-z|-u] [-out outputname.txtd] inputname.txt");
-        }
         if (inputFileName != null && !new File(inputFileName).exists()) {
             throw new IOException("Wrong input file name");
         }
@@ -47,7 +41,7 @@ public class console {
         }
         else if (u){
             if (outputFileName == null){
-                outputFileName = inputFileName.substring(0,inputFileName.length()-2);
+                outputFileName = inputFileName.substring(0,inputFileName.length()-1);
             }
             new pack_rle().unpacking(inputFileName,outputFileName);
         }
