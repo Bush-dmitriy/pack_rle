@@ -14,7 +14,7 @@ public class pack_rle {
                     StringBuilder s = new StringBuilder();
                     for (int i = 0; i < strLine.length(); i++) {
                         if (i == strLine.length() - 1) {
-                            if (i == 0) writer.write("-1" + strLine.charAt(i));
+                            if (unrepCount==0&&repCount==1) writer.write("-1" + strLine.charAt(i));
                             if (unrepCount != 0) {
                                 writer.append('-');
                                 writer.append(String.valueOf(unrepCount + 1));
